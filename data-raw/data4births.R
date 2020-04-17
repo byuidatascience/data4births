@@ -95,7 +95,7 @@ devtools::document(package_path)
 dpr_readme(usethis::proj_get(), package_name_text, user)
 
 
-dpr_write_script(folder_dir = usethis::proj_get(), r_read = "scripts/tuberculosis_package.R", 
+dpr_write_script(folder_dir = package_path, r_read = "scripts/tuberculosis_package.R", 
                  r_folder_write = "data-raw", r_write = str_c(package_name_text, ".R"))
 devtools::document(package_path)
 dpr_push(folder_dir = package_path, message = "'documentation'", repo_url = NULL)
