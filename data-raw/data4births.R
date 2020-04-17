@@ -180,8 +180,6 @@ counts_all <- bind_rows(
   mutate(counts_us, group = "us")
 )
 
-
-
 ####  Table descriptions  ####
 
 counts_description <- list(month_number = "The numeric month of the year", 
@@ -337,11 +335,17 @@ dpr_readme(usethis::proj_get(), package_name_text, user)
 dpr_write_script(folder_dir = usethis::proj_get(), r_read = "scripts/births_package.R", 
                  r_folder_write = "data-raw", r_write = "data4births.R")
 
+devtools::document(package_path)
+dpr_push(folder_dir = package_path, message = "'Accounting data push'", repo_url = NULL)
 
 
-dpr_push(folder_dir = usethis::proj_get(), message = "'Second Push from Hathaway'", repo_url = NULL)
+#### Counts by Month Tables with totals
 
-
+# 1. read in data from the website of counts_all
+# 2. build monthly totals for each sport and the US
+# 3. build totals for all groups.
+# 
+# group, month, count, year_total, 
 
 
 ### Plots to check
