@@ -99,8 +99,8 @@
 
 
 #'
-#' @title The count of births of NHL players
-#' @description Data obtained from https://www.hockey-reference.com
+#' @title The count of births of all players and US by month.
+#' @description Data combined from others sources in package.
 #' @format A data frame with columns:
 #' \describe{
 #'  \item{month_number}{The variable is numeric. The numeric month of the year}
@@ -110,12 +110,12 @@
 #'  \item{births}{The variable is numeric. The total count of births on that day over the period of the data}
 #'  \item{group}{The variable is character. The professional sport or US births}
 #' }
-#' @source \url{https://www.hockey-reference.com/friv/birthdays.cgi?month=1&day=1}
+#' @source \url{https://github.com/byuidatascience/data4births}
 #' @examples
 #' \dontrun{
-#' counts_hockey
+#' counts_all
 #'}
-'counts_hockey'
+'counts_all'
 
 
 

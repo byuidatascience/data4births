@@ -118,15 +118,15 @@ A data frame with columns:
 
 
 
-## The count of births of NHL players
+## The count of births of all players and US by month.
 
-The data is called counts_hockey.
+The data is called counts_all.
 
 ### Description
 
-Data obtained from https://www.hockey-reference.com
+Data combined from others sources in package.
 
-The source of this data is < https://www.hockey-reference.com/friv/birthdays.cgi?month=1&day=1 >
+The source of this data is < https://github.com/byuidatascience/data4births >
 
 ### Data format
 

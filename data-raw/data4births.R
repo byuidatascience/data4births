@@ -2,6 +2,7 @@
 
 pacman::p_load(tidyverse, glue, readxl, Lahman, rvest, lubridate)
 pacman::p_load_gh("byuidss/DataPushR")
+library(fs)
 
 set.seed(20200313)
 
@@ -145,7 +146,7 @@ write_csv(basketball_births, "basketball.csv")
 ### Counts by day
 
 counts_baseball <- baseball_births %>%
-  filter(country == "USA", year > 1925, year < 2015) %>%
+  filter(country == "USA", year(birthday) > 1925, year(birthday) < 2015) %>%
   count(month, day, name = "births") %>%
   mutate(day_of_year = 1:n()) %>%
   left_join(tibble(month = 1:12, month_name = month.name)) %>%
@@ -166,7 +167,7 @@ counts_hockey <- hockey_births %>%
   select(month_number = month, month_name, day_of_month = day, day_of_year, births)
 
 counts_football <- football_births %>%
-  mutate(month = month(birthdate), day = mday(birthdate)) %>%
+  mutate(month = month(birthday), day = mday(birthday)) %>%
   count(month, day, name = "births") %>%
   mutate(day_of_year = 1:n()) %>%
   left_join(tibble(month = 1:12, month_name = month.name)) %>%
@@ -236,7 +237,7 @@ dpr_export(counts_football, export_folder = path(package_path, "data-raw"),
 dpr_export(counts_hockey, export_folder = path(package_path, "data-raw"), 
            export_format = c(".csv", ".json", ".xlsx", ".sav", ".dta"))
 
-dpr_export(counts_hockey, export_folder = path(package_path, "data-raw"), 
+dpr_export(counts_us, export_folder = path(package_path, "data-raw"), 
            export_format = c(".csv", ".json", ".xlsx", ".sav", ".dta"))
 
 dpr_export(counts_all, export_folder = path(package_path, "data-raw"), 
@@ -256,7 +257,7 @@ dpr_export(hockey_births, export_folder = path(package_path, "data-raw"),
 
 usethis::use_data(counts_baseball, counts_basketball, counts_football, counts_hockey, 
                   counts_all, counts_us,
-                  baseball_births, hockey_births, basketball_births, football_births)
+                  baseball_births, hockey_births, basketball_births, football_births, overwrite = TRUE)
 
 dpr_document(counts_us, extension = ".md.R", export_folder = usethis::proj_get(),
              object_name = "counts_us", title = "The count of births in the United States from 1994-2014",
@@ -293,10 +294,10 @@ dpr_document(counts_hockey, extension = ".md.R", export_folder = usethis::proj_g
              var_details = counts_description)
 
 dpr_document(counts_all, extension = ".md.R", export_folder = usethis::proj_get(),
-             object_name = "counts_hockey", 
-             title = "The count of births of NHL players",
-             description = "Data obtained from https://www.hockey-reference.com",
-             source = "https://www.hockey-reference.com/friv/birthdays.cgi?month=1&day=1",
+             object_name = "counts_all", 
+             title = "The count of births of all players and US by month.",
+             description = "Data combined from others sources in package.",
+             source = "https://github.com/byuidatascience/data4births",
              var_details = counts_all_description)
 
 #### date details ####
@@ -332,7 +333,7 @@ dpr_document(hockey_births, extension = ".md.R", export_folder = usethis::proj_g
 dpr_readme(usethis::proj_get(), package_name_text, user)
 
 
-dpr_write_script(folder_dir = package_path, r_read = "scripts/tuberculosis_package.R", 
+dpr_write_script(folder_dir = package_path, r_read = "scripts/births_package.R", 
                  r_folder_write = "data-raw", r_write = str_c(package_name_text, ".R"))
 devtools::document(package_path)
 dpr_push(folder_dir = package_path, message = "'documentation'", repo_url = NULL)

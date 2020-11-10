@@ -13,36 +13,17 @@ A data frame with columns:
  \item{day_of_year}{The variable is integer. The day number of the year 1-366}
  \item{births}{The variable is integer. The total count of births on that day over the period of the data}
 }
-
-A data frame with columns:
-\describe{
- \item{month_number}{The variable is numeric. The numeric month of the year}
- \item{month_name}{The variable is character. The name of the month}
- \item{day_of_month}{The variable is numeric. The day number of the month 1-31}
- \item{day_of_year}{The variable is integer. The day number of the year 1-366}
- \item{births}{The variable is numeric. The total count of births on that day over the period of the data}
- \item{group}{The variable is character. The professional sport or US births}
-}
 }
 \source{
-\url{https://www.hockey-reference.com/friv/birthdays.cgi?month=1&day=1}
-
 \url{https://www.hockey-reference.com/friv/birthdays.cgi?month=1&day=1}
 }
 \usage{
 counts_hockey
-
-counts_hockey
 }
 \description{
 Data obtained from https://www.hockey-reference.com
-
-Data obtained from https://www.hockey-reference.com
 }
 \examples{
-\dontrun{
-counts_hockey
-}
 \dontrun{
 counts_hockey
 }

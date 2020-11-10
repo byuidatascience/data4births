@@ -98,7 +98,7 @@ month_number,month_name,day_of_month,day_of_year,births
 4,April,6,97,8
 4,April,7,98,8
 4,April,8,99,11
-4,April,9,100,18
+4,April,9,100,17
 4,April,10,101,10
 4,April,11,102,10
 4,April,12,103,9
@@ -187,7 +187,7 @@ month_number,month_name,day_of_month,day_of_year,births
 7,July,4,186,13
 7,July,5,187,13
 7,July,6,188,11
-7,July,7,189,14
+7,July,7,189,13
 7,July,8,190,13
 7,July,9,191,13
 7,July,10,192,8
@@ -199,7 +199,7 @@ month_number,month_name,day_of_month,day_of_year,births
 7,July,16,198,13
 7,July,17,199,14
 7,July,18,200,15
-7,July,19,201,9
+7,July,19,201,10
 7,July,20,202,22
 7,July,21,203,13
 7,July,22,204,10
@@ -246,7 +246,7 @@ month_number,month_name,day_of_month,day_of_year,births
 9,September,1,245,15
 9,September,2,246,19
 9,September,3,247,14
-9,September,4,248,9
+9,September,4,248,10
 9,September,5,249,12
 9,September,6,250,11
 9,September,7,251,21
@@ -280,7 +280,7 @@ month_number,month_name,day_of_month,day_of_year,births
 10,October,5,279,18
 10,October,6,280,13
 10,October,7,281,13
-10,October,8,282,9
+10,October,8,282,10
 10,October,9,283,12
 10,October,10,284,16
 10,October,11,285,13
@@ -293,7 +293,7 @@ month_number,month_name,day_of_month,day_of_year,births
 10,October,18,292,6
 10,October,19,293,12
 10,October,20,294,12
-10,October,21,295,15
+10,October,21,295,16
 10,October,22,296,14
 10,October,23,297,7
 10,October,24,298,7
@@ -319,7 +319,7 @@ month_number,month_name,day_of_month,day_of_year,births
 11,November,13,318,17
 11,November,14,319,8
 11,November,15,320,9
-11,November,16,321,9
+11,November,16,321,10
 11,November,17,322,11
 11,November,18,323,15
 11,November,19,324,13
